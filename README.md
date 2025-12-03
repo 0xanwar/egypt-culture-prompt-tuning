@@ -1,6 +1,5 @@
 # Egyptian Cultural Understanding with Prompt Tuning
 
-![Egyptian Cultural AI](https://img.shields.io/badge/Egyptian_Culture-AI-blue?logo=pytorch)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 
@@ -91,20 +90,23 @@ Text: PersonX prepares salted fish and colored eggs for family during Sham...
 ## 🧠 Technical Details
 
 ### Architecture
+
 - **Base Model**: BERT-base-uncased (frozen)
 - **Prompt Tokens**: 10 learnable embeddings inserted after [CLS] token
 - **Classification Head**: Linear layer mapping to 5 cultural themes
 - **Total Trainable Parameters**: 11,520 (0.01% of BERT)
 
 ### Dataset
+
 - **Source**: [Atomic-EgMM](https://huggingface.co/datasets/Anwar12/Atomic-EgMM)
-- **Size**: 125 training / 36 validation / 18 test examples
+- **Size**: 125 training / 36 validation / 18 test examples (Will be expanded)
 - **Cultural Mapping**: Rule-based intent-to-theme mapping using Egyptian keywords
 
 ### Training Configuration
+
 - **Epochs**: 15
 - **Batch Size**: 8 (adaptive for small datasets)
-- **Learning Rates**: 
+- **Learning Rates**:
   - Prompt embeddings: 5e-4
   - Classifier head: 1e-5
 
@@ -112,17 +114,16 @@ Text: PersonX prepares salted fish and colored eggs for family during Sham...
 
 - **Cultural Bias Auditing**: Identify Western defaults in VLMs
 - **Egyptian Content Moderation**: Understand culturally appropriate content
-- **Social Media Analysis**: Analyze Egyptian cultural events in text
 - **Vision-Language Extension**: Provide cultural context for image understanding
 
 ## 📈 Results
 
-| Cultural Theme | Confidence | Status |
-|----------------|------------|--------|
-| Family & Religious | >75% | ✅ Strong |
-| Cultural Heritage | ~42% | ⚠️ Needs more data |
-| National Pride | 0% | ❌ Critical gap |
-| Community Generosity | ~36% | ⚠️ Ambiguous |
+| Cultural Theme       | Confidence | Status               |
+| -------------------- | ---------- | -------------------- |
+| Family & Religious   | >75%       | ✅ Strong            |
+| Cultural Heritage    | ~42%       | ⚠️ Needs more data |
+| National Pride       | 0%         | ❌ Critical gap      |
+| Community Generosity | ~36%       | ⚠️ Ambiguous       |
 
 > **Recommendation**: Add 10-15 examples per underrepresented theme for comprehensive coverage
 
@@ -144,5 +145,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Dataset: [Anwar12/Atomic-EgMM](https://huggingface.co/datasets/Anwar12/Atomic-EgMM)
 - Base Model: [BERT](https://huggingface.co/bert-base-uncased)
-- Inspiration: [Prompt Tuning (Lester et al., 2021)](https://arxiv.org/abs/2104.08691)
-- Cultural Expertise: Egyptian cultural consultants and linguists
+- Inspiration: [Visual Prompt Tuning - VPT](https://arxiv.org/abs/2203.12119)
